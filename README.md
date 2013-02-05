@@ -1,4 +1,3 @@
-FAF-111
-=======
+# Windows Programming laboratories repository
 
-Windows Programming laboratories repository (FAF-111)
+For details [[view wiki|https://github.com/TUM-FAF/WP/wiki]].
