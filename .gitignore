@@ -23,5 +23,6 @@
 *.out
 *.app
 
-# Dependencies
+# CodeBlocks artefacts
 *.depend
+*.layout
