@@ -4,7 +4,7 @@
 Window. Window handling. Basic window’s form elements
 
 ## Contents
-* API
+* Win32 API
 * GIT
 * Programming Style Guidlines
 * Window
@@ -55,12 +55,19 @@ For example:
 Whatever you choose, add a link to it in your master's branch readme file.
 If you are going to write your own PSG, do not forget to add it into your master branch.
 
+## Mandatory Objectives
+* Create a Windows application
+* Choose Programming Style Guidlines that you'll follow
+* Add 2 buttons to window: one with default styles, one with custom styles (size, background, text color, font family, font size)
+* Add 2 text inputs to window: one with default styles, one with custom styles (size, background, text color, font family, font size)
+* Add 2 text elements to window: one with default styles, one with custom styles (size, background, text color, font family, font size)
 
-## Objectives
-_todo_
-
-## General Requirements
-_todo_
+## Objectives With Points
+* Make elements to fit window on resize **(1 pt)**
+_(hint: you can limit minimal window width and height)_
+* Make elements to interact or change other elements (1 pt for 2 different interactions) **(0-2 pt)** _(ex. on button click, change text element color or position)_
+* Change behavior of different window actions (at least 3). For ex.: on clicking close button, move window to a random location on display working space **(1 pt)**
+* Write your own PSG (you can take existent one and modify it) and argue why it is better (for you) **(1 pt)**
 
 ## References
 * Programming Windows by Charlez Petzold, 5th edition:
