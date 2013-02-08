@@ -6,7 +6,7 @@ Window. Window handling. Basic window’s form elements
 ## Contents
 * Win32 API
 * GIT
-* Programming Style Guidlines
+* Programming Style Guidelines
 * Window
 * Button
 * Input
@@ -16,11 +16,11 @@ Window. Window handling. Basic window’s form elements
 
 ### IDE and compiler
 You can use whatever IDE/Text editor/CLI you want, but you'll have to write code by your own.
-I recomend [CodeBlocks](http://www.codeblocks.org/) as it is cross platform, has a version which contains a compiler, and is less tempting to try drag-n-drop features.
+I recommend [CodeBlocks](http://www.codeblocks.org/) as it is cross platform, has a version which contains a compiler, and is less tempting to try drag-n-drop features.
 
 #### If you chose CodeBlocks, here is how you start a project with it:
-* Download. Better choose a version wich has compiler. Also it is a good idea to take last astable version (12.11), but it is not mandatory as 8.X is also good one.
-* Install. After instalation it will ask you to choose a defolt compiler. Do it wisely.
+* Download. Better choose a version which has compiler. Also it is a good idea to take last stable version (12.11), but it is not mandatory as 8.X is also good one.
+* Install. After installation it will ask you to choose a default compiler. Do it wisely.
 * File -> New -> Project -> Win32 GUI project -> Next...
 * In order to see only GUI window without console, in Project properties, set Build targets -> Type -> GUI Application (project may need a rebuild)
 
@@ -35,15 +35,15 @@ Main purposes of GIT/GitHub are:
 
 By default you have one branch - master. I'll review only work from that branch.
 
-Initialy master branch should have two files: .gitignore and README.md.
-* I recomend to copy .gitignore file from [WP Labs master branch](https://github.com/TUM-FAF/WP). Add additional rules in order not to submit unnecessary files to repository.
+Initially master branch should have two files: .gitignore and README.md.
+* I recommend to copy .gitignore file from [WP Labs master branch](https://github.com/TUM-FAF/WP). Add additional rules in order not to submit unnecessary files to repository.
 * README.md (can be any other flavoured by GitHub extension) should contain at least the name of course and your name.
 
 Later you'll have one folder per laboratory work. Use **lab#X** format (where X is laboratory work number). More about this you can find on [Submission Process page](https://github.com/TUM-FAF/WP/wiki/Submission-Process).
 
 Before submission you can use other branches to work on your projects. You can use other branches in order to require help from me or other classmates.
 
-#### Programming Style Guidlines (PSG)
+#### Programming Style Guidelines (PSG)
 It is a good practice to have a PSG. And a good solution is to take and use one available PSG.
 For example:
 * [Google C++ Style Guide](http://google-styleguide.googlecode.com/svn/trunk/cppguide.xml)
@@ -57,7 +57,7 @@ If you are going to write your own PSG, do not forget to add it into your master
 
 ## Mandatory Objectives
 * Create a Windows application
-* Choose Programming Style Guidlines that you'll follow
+* Choose Programming Style Guidelines that you'll follow
 * Add 2 buttons to window: one with default styles, one with custom styles (size, background, text color, font family, font size)
 * Add 2 text inputs to window: one with default styles, one with custom styles (size, background, text color, font family, font size)
 * Add 2 text elements to window: one with default styles, one with custom styles (size, background, text color, font family, font size)
