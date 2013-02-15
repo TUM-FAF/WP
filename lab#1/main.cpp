@@ -1,16 +1,5 @@
 #include <windows.h>
 
-/* Define buttons */
-struct{
-    long style;
-    char *text;
-}
-button[] = {
-  BS_PUSHBUTTON, "Start",
-  BS_PUSHBUTTON, "Stop",
-};
-#define BUTTON_NUM (sizeof button / sizeof button[0])
-
 /*  Declare Windows procedure  */
 LRESULT CALLBACK WindowProcedure (HWND, UINT, WPARAM, LPARAM);
 
@@ -45,19 +34,19 @@ int WINAPI WinMain (HINSTANCE hThisInstance, HINSTANCE hPrevInstance, LPSTR lpsz
 
   /* The class is registered, let's create the program*/
   hwnd = CreateWindowEx (
-       0,                   /* Extended possibilites for variation */
-       szClassName,         /* Classname */
-       "WP Lab#1 example",  /* Title Text */
-       WS_OVERLAPPEDWINDOW, /* default window */
-       CW_USEDEFAULT,       /* Windows decides the position */
-       CW_USEDEFAULT,       /* where the window ends up on the screen */
-       544,                 /* The programs width */
-       375,                 /* and height in pixels */
-       HWND_DESKTOP,        /* The window is a child-window to desktop */
-       NULL,                /* No menu */
-       hThisInstance,       /* Program Instance handler */
-       NULL                 /* No Window Creation data */
-       );
+    0,                   /* Extended possibilites for variation */
+    szClassName,         /* Classname */
+    "WP Lab#1 example",  /* Title Text */
+    WS_OVERLAPPEDWINDOW, /* default window */
+    CW_USEDEFAULT,       /* Windows decides the position */
+    CW_USEDEFAULT,       /* where the window ends up on the screen */
+    544,                 /* The programs width */
+    375,                 /* and height in pixels */
+    HWND_DESKTOP,        /* The window is a child-window to desktop */
+    NULL,                /* No menu */
+    hThisInstance,       /* Program Instance handler */
+    NULL                 /* No Window Creation data */
+  );
 
   /* Make the window visible on the screen */
   ShowWindow (hwnd, nCmdShow);
@@ -78,37 +67,7 @@ int WINAPI WinMain (HINSTANCE hThisInstance, HINSTANCE hPrevInstance, LPSTR lpsz
 /*  This function is called by the Windows function DispatchMessage()  */
 
 LRESULT CALLBACK WindowProcedure (HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam){
-
-static HWND hwndButton[BUTTON_NUM];
-static HWND hwndTextarea;
-static int cxChar, cyChar;
-HDC hdc;
-PAINTSTRUCT ps;
-int i;
-TEXTMETRIC tm;
-
   switch (message){                  /* handle the messages */
-    case WM_CREATE:
-      hdc = GetDC(hwnd);
-      SelectObject(hdc, GetStockObject(SYSTEM_FIXED_FONT));
-      GetTextMetrics(hdc, &tm);
-      cxChar = tm.tmAveCharWidth;
-      cyChar = tm.tmHeight + tm.tmExternalLeading;
-      ReleaseDC(hwnd, hdc);
-      /* Create buttons */
-      for(i = 0; i < BUTTON_NUM; i++)
-          hwndButton[i] = CreateWindow("button", button[i].text, WS_CHILD|WS_VISIBLE|
-          button[i].style, cxChar, cyChar *(1 + 2 * i),
-          20 * cxChar, 7 * cyChar / 4, hwnd,(HMENU) i,
-          ((LPCREATESTRUCT) lParam) -> hInstance, NULL);
-      
-      /* Create textarea */
-      hwndTextarea = hwndButton[0] = CreateWindowEx(WS_EX_CLIENTEDGE, "edit", "default text",
-          WS_CHILD | WS_VISIBLE | WS_TABSTOP | WS_BORDER | ES_LEFT,
-          0, 100, 200, 24,
-          hwnd, (HMENU)(++i),
-          (HINSTANCE) GetWindowLong (hwnd, GWL_HINSTANCE), NULL);
-      break;
     case WM_DESTROY:
       PostQuitMessage (0);       /* send a WM_QUIT to the message queue */
       break;
