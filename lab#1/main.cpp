@@ -1,6 +1,10 @@
 #include <windows.h>
 
 /* Define buttons */
+struct{
+    long style;
+    char *text;
+}
 button[] = {
   BS_PUSHBUTTON, "Start",
   BS_PUSHBUTTON, "Stop",
@@ -74,9 +78,27 @@ int WINAPI WinMain (HINSTANCE hThisInstance, HINSTANCE hPrevInstance, LPSTR lpsz
 /*  This function is called by the Windows function DispatchMessage()  */
 
 LRESULT CALLBACK WindowProcedure (HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam){
+
+static HWND hwndButton[BUTTON_NUM];
+static int cxChar, cyChar;
+HDC hdc;
+PAINTSTRUCT ps;
+int i;
+TEXTMETRIC tm;
+
   switch (message){                  /* handle the messages */
     case WM_CREATE:
-      // empty
+      hdc = GetDC(hwnd);
+      SelectObject(hdc, GetStockObject(SYSTEM_FIXED_FONT));
+      GetTextMetrics(hdc, &tm);
+      cxChar = tm.tmAveCharWidth;
+      cyChar = tm.tmHeight + tm.tmExternalLeading;
+      ReleaseDC(hwnd, hdc);
+      for(i = 0; i < BUTTON_NUM; i++)
+          hwndButton[i] = CreateWindow("button", button[i].text, WS_CHILD|WS_VISIBLE|
+          button[i].style, cxChar, cyChar *(1 + 2 * i),
+          20 * cxChar, 7 * cyChar / 4, hwnd,(HMENU) i,
+          ((LPCREATESTRUCT) lParam) -> hInstance, NULL);
       break;
     case WM_DESTROY:
       PostQuitMessage (0);       /* send a WM_QUIT to the message queue */
