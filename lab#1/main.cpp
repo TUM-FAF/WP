@@ -80,6 +80,7 @@ int WINAPI WinMain (HINSTANCE hThisInstance, HINSTANCE hPrevInstance, LPSTR lpsz
 LRESULT CALLBACK WindowProcedure (HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam){
 
 static HWND hwndButton[BUTTON_NUM];
+static HWND hwndTextarea;
 static int cxChar, cyChar;
 HDC hdc;
 PAINTSTRUCT ps;
@@ -94,11 +95,19 @@ TEXTMETRIC tm;
       cxChar = tm.tmAveCharWidth;
       cyChar = tm.tmHeight + tm.tmExternalLeading;
       ReleaseDC(hwnd, hdc);
+      /* Create buttons */
       for(i = 0; i < BUTTON_NUM; i++)
           hwndButton[i] = CreateWindow("button", button[i].text, WS_CHILD|WS_VISIBLE|
           button[i].style, cxChar, cyChar *(1 + 2 * i),
           20 * cxChar, 7 * cyChar / 4, hwnd,(HMENU) i,
           ((LPCREATESTRUCT) lParam) -> hInstance, NULL);
+      
+      /* Create textarea */
+      hwndTextarea = hwndButton[0] = CreateWindowEx(WS_EX_CLIENTEDGE, "edit", "default text",
+          WS_CHILD | WS_VISIBLE | WS_TABSTOP | WS_BORDER | ES_LEFT,
+          0, 100, 200, 24,
+          hwnd, (HMENU)(++i),
+          (HINSTANCE) GetWindowLong (hwnd, GWL_HINSTANCE), NULL);
       break;
     case WM_DESTROY:
       PostQuitMessage (0);       /* send a WM_QUIT to the message queue */
