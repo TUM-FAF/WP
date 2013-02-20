@@ -50,7 +50,7 @@ For example:
 * [Geotechnical Software Services C++ Programming Style Guidelines](http://geosoft.no/development/cppstyle.html)
 * [USC Aerial Robotics Programming Style Guide (C++)](https://github.com/uscrs-art/uscrs-art/wiki)
 * [C style guide](https://github.com/nickbjohnson4224/rhombus/wiki/C-style-guide)
-* or rite your own PSG
+* or write your own PSG
 
 Whatever you choose, add a link to it in your master's branch readme file.
 If you are going to write your own PSG, do not forget to add it into your master branch.
