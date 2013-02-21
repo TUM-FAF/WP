@@ -10,6 +10,11 @@ So far I did:
 * Added a text
 * Added 2 text inputs
 
+ToDo:
+* Add interactions betwen elements
+* Style acordingly initial idea
+* Fix window to given size or make it responsive
+
 ## References
 
 * [DrawText function](http://msdn.microsoft.com/en-us/library/windows/desktop/dd162498(v=vs.85).aspx)
