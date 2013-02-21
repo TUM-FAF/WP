@@ -9,7 +9,7 @@ Window. Window handling. Basic window’s form elements
 * Programming Style Guidelines
 * Window
 * Button
-* Input
+* Text Input
 * Text
 
 ## Prerequisites
