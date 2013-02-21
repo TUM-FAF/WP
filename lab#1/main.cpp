@@ -45,19 +45,19 @@ int WINAPI WinMain (HINSTANCE hThisInstance, HINSTANCE hPrevInstance, LPSTR lpsz
 
   /* The class is registered, let's create the program*/
   hwnd = CreateWindowEx (
-       0,                   /* Extended possibilites for variation */
-       szClassName,         /* Classname */
-       "WP Lab#1 example",  /* Title Text */
-       WS_OVERLAPPEDWINDOW, /* default window */
-       CW_USEDEFAULT,       /* Windows decides the position */
-       CW_USEDEFAULT,       /* where the window ends up on the screen */
-       544,                 /* The programs width */
-       375,                 /* and height in pixels */
-       HWND_DESKTOP,        /* The window is a child-window to desktop */
-       NULL,                /* No menu */
-       hThisInstance,       /* Program Instance handler */
-       NULL                 /* No Window Creation data */
-       );
+    0,                   /* Extended possibilites for variation */
+    szClassName,         /* Classname */
+    "WP Lab#1 example",  /* Title Text */
+    WS_OVERLAPPEDWINDOW, /* default window */
+    CW_USEDEFAULT,       /* Windows decides the position */
+    CW_USEDEFAULT,       /* where the window ends up on the screen */
+    544,                 /* The programs width */
+    375,                 /* and height in pixels */
+    HWND_DESKTOP,        /* The window is a child-window to desktop */
+    NULL,                /* No menu */
+    hThisInstance,       /* Program Instance handler */
+    NULL                 /* No Window Creation data */
+  );
 
   /* Make the window visible on the screen */
   ShowWindow (hwnd, nCmdShow);
@@ -86,6 +86,7 @@ HDC hdc;
 PAINTSTRUCT ps;
 int i;
 TEXTMETRIC tm;
+RECT rect;
 
   switch (message){                  /* handle the messages */
     case WM_CREATE:
@@ -108,10 +109,25 @@ TEXTMETRIC tm;
           0, 100, 200, 24,
           hwnd, (HMENU)(++i),
           (HINSTANCE) GetWindowLong (hwnd, GWL_HINSTANCE), NULL);
+
+      
       break;
+
+    case WM_PAINT :
+      /* Draw text */
+      InvalidateRect(hwnd,NULL,TRUE);
+      hdc = BeginPaint (hwnd, &ps);
+      SelectObject(hdc, GetStockObject(SYSTEM_FIXED_FONT));
+      GetClientRect (hwnd, &rect);
+      DrawText (hdc, "Lucrarea de laborator a studentului...(like in textbook)", -1, &rect,
+                DT_SINGLELINE | DT_CENTER | DT_VCENTER) ;
+      EndPaint (hwnd, &ps) ;
+      break;
+
     case WM_DESTROY:
       PostQuitMessage (0);       /* send a WM_QUIT to the message queue */
       break;
+
     default:                      /* for messages that we don't deal with */
       return DefWindowProc (hwnd, message, wParam, lParam);
   }
