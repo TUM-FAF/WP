@@ -1,21 +1,10 @@
 #include <windows.h>
 
-/* Define buttons */
-struct{
-    long style;
-    char *text;
-}
-button[] = {
-  BS_PUSHBUTTON, "Start",
-  BS_PUSHBUTTON, "Stop",
-};
-#define BUTTON_NUM (sizeof button / sizeof button[0])
-
 /*  Declare Windows procedure  */
 LRESULT CALLBACK WindowProcedure (HWND, UINT, WPARAM, LPARAM);
 
 /*  Make the class name into a global variable  */
-char szClassName[ ] = "CodeBlocksWindowsApp";
+char szClassName[] = "CodeBlocksWindowsApp";
 
 int WINAPI WinMain (HINSTANCE hThisInstance, HINSTANCE hPrevInstance, LPSTR lpszArgument, int nCmdShow){
   HWND hwnd;               /* This is the handle for our window */
@@ -36,92 +25,97 @@ int WINAPI WinMain (HINSTANCE hThisInstance, HINSTANCE hPrevInstance, LPSTR lpsz
   wincl.lpszMenuName = NULL;                 /* No menu */
   wincl.cbClsExtra = 0;                      /* No extra bytes after the window class */
   wincl.cbWndExtra = 0;                      /* structure or the window instance */
-  /* Use Windows's default colour as the background of the window */
-  wincl.hbrBackground = (HBRUSH) COLOR_BACKGROUND;
+  
+  // Set custom background
+  wincl.hbrBackground = (HBRUSH) CreateSolidBrush(RGB(238, 238, 238));
 
   /* Register the window class, and if it fails quit the program */
   if (!RegisterClassEx (&wincl))
     return 0;
 
   /* The class is registered, let's create the program*/
-  hwnd = CreateWindowEx (
-    0,                   /* Extended possibilites for variation */
-    szClassName,         /* Classname */
-    "WP Lab#1 example",  /* Title Text */
-    WS_OVERLAPPEDWINDOW, /* default window */
-    CW_USEDEFAULT,       /* Windows decides the position */
-    CW_USEDEFAULT,       /* where the window ends up on the screen */
-    544,                 /* The programs width */
-    375,                 /* and height in pixels */
-    HWND_DESKTOP,        /* The window is a child-window to desktop */
-    NULL,                /* No menu */
-    hThisInstance,       /* Program Instance handler */
-    NULL                 /* No Window Creation data */
-  );
+  hwnd = CreateWindowEx (0, szClassName, "WP Lab#1 example (mobile app simulation)",
+    WS_OVERLAPPEDWINDOW, CW_USEDEFAULT, CW_USEDEFAULT, 270+16, 450+16,
+    HWND_DESKTOP, NULL, hThisInstance, NULL);
 
-  /* Make the window visible on the screen */
   ShowWindow (hwnd, nCmdShow);
 
-  /* Run the message loop. It will run until GetMessage() returns 0 */
   while (GetMessage (&messages, NULL, 0, 0)){
-    /* Translate virtual-key messages into character messages */
-    TranslateMessage(&messages);
-    /* Send message to WindowProcedure */
-    DispatchMessage(&messages);
+    TranslateMessage (&messages);
+    DispatchMessage (&messages);
   }
 
-  /* The program return-value is 0 - The value that PostQuitMessage() gave */
   return messages.wParam;
 }
 
-
-/*  This function is called by the Windows function DispatchMessage()  */
-
 LRESULT CALLBACK WindowProcedure (HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam){
 
-static HWND hwndButton[BUTTON_NUM];
-static HWND hwndTextarea;
-static int cxChar, cyChar;
-HDC hdc;
-PAINTSTRUCT ps;
-int i;
-TEXTMETRIC tm;
-RECT rect;
+  HDC hdc, hdcMem;
+  PAINTSTRUCT ps;
+  RECT rect;
+
+  int hMenuIndex = -1;
+  HWND hwndTextareaLogin
+     , hwndTextareaPassword
+     , hwndButton;
+  bool firstPaint = true;
 
   switch (message){                  /* handle the messages */
     case WM_CREATE:
-      hdc = GetDC(hwnd);
-      SelectObject(hdc, GetStockObject(SYSTEM_FIXED_FONT));
-      GetTextMetrics(hdc, &tm);
-      cxChar = tm.tmAveCharWidth;
-      cyChar = tm.tmHeight + tm.tmExternalLeading;
-      ReleaseDC(hwnd, hdc);
-      /* Create buttons */
-      for(i = 0; i < BUTTON_NUM; i++)
-          hwndButton[i] = CreateWindow("button", button[i].text, WS_CHILD|WS_VISIBLE|
-          button[i].style, cxChar, cyChar *(1 + 2 * i),
-          20 * cxChar, 7 * cyChar / 4, hwnd,(HMENU) i,
-          ((LPCREATESTRUCT) lParam) -> hInstance, NULL);
-      
-      /* Create textarea */
-      hwndTextarea = hwndButton[0] = CreateWindowEx(WS_EX_CLIENTEDGE, "edit", "default text",
-          WS_CHILD | WS_VISIBLE | WS_TABSTOP | WS_BORDER | ES_LEFT,
-          0, 100, 200, 24,
-          hwnd, (HMENU)(++i),
-          (HINSTANCE) GetWindowLong (hwnd, GWL_HINSTANCE), NULL);
 
+      /* Create textarea 1 */
+      hwndTextareaLogin = CreateWindowEx (
+        WS_EX_CLIENTEDGE, "edit", "Login", 
+        WS_CHILD | WS_VISIBLE | WS_TABSTOP | WS_BORDER | ES_LEFT,
+        60, 240, 150, 30,
+        hwnd, (HMENU)(++hMenuIndex),
+        (HINSTANCE) GetWindowLong (hwnd, GWL_HINSTANCE), NULL
+      );
+
+      /* Create textarea 2 */
+      hwndTextareaPassword = CreateWindowEx (
+        WS_EX_CLIENTEDGE, "edit", "Password",
+        WS_CHILD | WS_VISIBLE | WS_TABSTOP | WS_BORDER | ES_LEFT,
+        60, 270, 150, 30,
+        hwnd, (HMENU)(++hMenuIndex),
+        (HINSTANCE) GetWindowLong (hwnd, GWL_HINSTANCE), NULL
+      );
+
+      /* Create button */
+      hwndButton = CreateWindow (
+        "button", "Login",
+        WS_CHILD | WS_VISIBLE | BS_PUSHBUTTON,
+        60, 330, 150, 30,
+        hwnd,(HMENU)(++hMenuIndex),
+        (HINSTANCE) GetWindowLong (hwnd, GWL_HINSTANCE), NULL
+      );
+
+
+      // Force paint
+      InvalidateRect(hwnd, NULL, TRUE);
       
       break;
 
-    case WM_PAINT :
-      /* Draw text */
-      InvalidateRect(hwnd,NULL,TRUE);
-      hdc = BeginPaint (hwnd, &ps);
-      SelectObject(hdc, GetStockObject(SYSTEM_FIXED_FONT));
-      GetClientRect (hwnd, &rect);
-      DrawText (hdc, "Lucrarea de laborator a studentului...(like in textbook)", -1, &rect,
-                DT_SINGLELINE | DT_CENTER | DT_VCENTER) ;
-      EndPaint (hwnd, &ps) ;
+    case WM_PAINT:
+      if (firstPaint){
+        hdc = BeginPaint (hwnd, &ps);
+        // Draw rectangle
+        Rectangle (hdc, 60, 60, 210, 210);
+
+        // Draw text
+        SelectObject (hdc, GetStockObject(SYSTEM_FIXED_FONT));
+        GetClientRect (hwnd, &rect);
+        rect.top = 360;
+        rect.right = 210;
+        rect.bottom = 390;
+        rect.left = 60;
+        DrawText (hdc, "Enter your data to log in", -1, &rect, DT_VCENTER | DT_CENTER | DT_WORDBREAK);
+
+        EndPaint (hwnd, &ps);
+
+        firstPaint = false;
+      }
+
       break;
 
     case WM_DESTROY:
