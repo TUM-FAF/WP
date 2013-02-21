@@ -26,3 +26,7 @@
 # CodeBlocks artefacts
 *.depend
 *.layout
+
+# MS Office trash
+~*.tmp
+~*.docx
