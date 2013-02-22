@@ -25,7 +25,7 @@ int WINAPI WinMain (HINSTANCE hThisInstance, HINSTANCE hPrevInstance, LPSTR lpsz
   wincl.lpszMenuName = NULL;                 /* No menu */
   wincl.cbClsExtra = 0;                      /* No extra bytes after the window class */
   wincl.cbWndExtra = 0;                      /* structure or the window instance */
-  
+
   // Set custom background
   wincl.hbrBackground = (HBRUSH) CreateSolidBrush(RGB(238, 238, 238));
 
@@ -48,6 +48,8 @@ int WINAPI WinMain (HINSTANCE hThisInstance, HINSTANCE hPrevInstance, LPSTR lpsz
   return messages.wParam;
 }
 
+bool firstPaintColor = true;
+
 LRESULT CALLBACK WindowProcedure (HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam){
 
   HDC hdc, hdcMem;
@@ -58,14 +60,14 @@ LRESULT CALLBACK WindowProcedure (HWND hwnd, UINT message, WPARAM wParam, LPARAM
   HWND hwndTextareaLogin
      , hwndTextareaPassword
      , hwndButton;
-  bool firstPaint = true;
+  bool firstPaint = true; 
 
   switch (message){                  /* handle the messages */
     case WM_CREATE:
 
       /* Create textarea 1 */
       hwndTextareaLogin = CreateWindowEx (
-        WS_EX_CLIENTEDGE, "edit", "Login", 
+        WS_EX_CLIENTEDGE, "edit", "Login",
         WS_CHILD | WS_VISIBLE | WS_TABSTOP | WS_BORDER | ES_LEFT,
         60, 240, 150, 30,
         hwnd, (HMENU)(++hMenuIndex),
@@ -93,7 +95,7 @@ LRESULT CALLBACK WindowProcedure (HWND hwnd, UINT message, WPARAM wParam, LPARAM
 
       // Force paint
       InvalidateRect(hwnd, NULL, TRUE);
-      
+
       break;
 
     case WM_PAINT:
@@ -117,6 +119,27 @@ LRESULT CALLBACK WindowProcedure (HWND hwnd, UINT message, WPARAM wParam, LPARAM
       }
 
       break;
+
+    case WM_MOVE:
+      RedrawWindow(hwnd, NULL, NULL, RDW_INVALIDATE);
+      break;
+
+    case WM_CTLCOLOREDIT:
+      {
+        if ((HWND)lParam == GetDlgItem(hwnd, 1)){
+          HBRUSH hBrush;
+          if(firstPaintColor){
+            hBrush = CreateSolidBrush(RGB(255,0,0));
+            firstPaintColor = false;
+          }else{
+            hBrush = CreateSolidBrush(RGB(255,255,0));
+          }
+          ::SelectObject((HDC)wParam, (HGDIOBJ)hBrush);
+        }
+
+        break;
+      }
+
 
     case WM_DESTROY:
       PostQuitMessage (0);       /* send a WM_QUIT to the message queue */
