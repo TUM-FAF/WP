@@ -5,17 +5,17 @@
 ### About reports
 
 * Do not put code in your report
-* Next time use as an email topic this pattern: [TUM][FAF Labs][WP] Name Surname
+* Next time use as an email topic which follows this pattern: [TUM][FAF Labs][WP] Name Surname
 * Next time name your report file as - _WP FAF 111 Name Surname Lab#0_ (replace your name, surname and lab number)
-* Inside your report - add a link to your lab repository (I know where it is, but it will be fast for me to locate your repository)
-* Better use a report template provided on https://github.com/TUM-FAF/WP
-* You said nothing about PSG (At least choose one existent that matches your style. If it has any differences - mention them)
+* Inside your report - add a link to your lab repository (I know where it is, but it will be easier for me to locate your repository)
+* Better use a report template provided in [repository](https://github.com/TUM-FAF/WP)
+* You said nothing about PSG (At least choose one existent that matches your style. If it has any differences - mention them.)
 
 ### About repository
 
-* Rename your folder names in your repository to follow **lab#0** standard
+* Rename your folder names in your repository to follow **lab#0** pattern
 * For each laboratory work add one README file (in its own folder)
-* Keep your finished code in master branch. It is awesome that you get how to work with branches, but proposed work flow is a bit different: use master branch for submission ready code, and use other branches for development and testing. For details look at https://github.com/TUM-FAF/WP/wiki/Submission-Process
+* Keep your finished code in master branch. It is awesome that you get how to work with branches, but proposed work flow is a bit different: use master branch for submission ready code, and use other branches for development and testing. For details look at [submission process page](https://github.com/TUM-FAF/WP/wiki/Submission-Process)
 
 ### About code
 
