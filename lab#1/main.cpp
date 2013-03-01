@@ -1,5 +1,8 @@
 #include <windows.h>
 
+#define ID_BUTTON 69
+#define ID_LISTBOX 70
+
 /*  Declare Windows procedure  */
 LRESULT CALLBACK WindowProcedure (HWND, UINT, WPARAM, LPARAM);
 
@@ -59,8 +62,9 @@ LRESULT CALLBACK WindowProcedure (HWND hwnd, UINT message, WPARAM wParam, LPARAM
   int hMenuIndex = -1;
   HWND hwndTextareaLogin
      , hwndTextareaPassword
-     , hwndButton;
-  bool firstPaint = true; 
+     , hwndButton
+     , hwndListbox;
+  bool firstPaint = true;
 
   switch (message){                  /* handle the messages */
     case WM_CREATE:
@@ -88,10 +92,18 @@ LRESULT CALLBACK WindowProcedure (HWND hwnd, UINT message, WPARAM wParam, LPARAM
         "button", "Login",
         WS_CHILD | WS_VISIBLE | BS_PUSHBUTTON,
         60, 330, 150, 30,
-        hwnd,(HMENU)(++hMenuIndex),
+        hwnd,(HMENU)ID_BUTTON,
         (HINSTANCE) GetWindowLong (hwnd, GWL_HINSTANCE), NULL
       );
 
+      /* Create listbox */
+      hwndListbox = CreateWindow (
+        "listbox", "",
+        WS_CHILD | WS_BORDER | WS_VISIBLE | WS_BORDER | WS_VSCROLL | ES_AUTOVSCROLL,
+        5, 5, 200, 200,
+        hwnd, (HMENU)ID_LISTBOX,
+        (HINSTANCE) GetWindowLong (hwnd, GWL_HINSTANCE), NULL
+      );
 
       // Force paint
       InvalidateRect(hwnd, NULL, TRUE);
@@ -125,20 +137,36 @@ LRESULT CALLBACK WindowProcedure (HWND hwnd, UINT message, WPARAM wParam, LPARAM
       break;
 
     case WM_CTLCOLOREDIT:
-      {
-        if ((HWND)lParam == GetDlgItem(hwnd, 1)){
-          HBRUSH hBrush;
-          if(firstPaintColor){
-            hBrush = CreateSolidBrush(RGB(255,0,0));
-            firstPaintColor = false;
-          }else{
-            hBrush = CreateSolidBrush(RGB(255,255,0));
-          }
-          ::SelectObject((HDC)wParam, (HGDIOBJ)hBrush);
+    {
+      if ((HWND)lParam == GetDlgItem(hwnd, 1)){
+        HBRUSH hBrush;
+        if(firstPaintColor){
+          hBrush = CreateSolidBrush(RGB(255,0,0));
+          firstPaintColor = false;
+        }else{
+          hBrush = CreateSolidBrush(RGB(255,255,0));
         }
-
-        break;
+        ::SelectObject((HDC)wParam, (HGDIOBJ)hBrush);
       }
+
+      break;
+    }
+
+    case WM_COMMAND:
+      switch (LOWORD(wParam))
+      {
+        case ID_BUTTON:
+          SendDlgItemMessage(hwnd, ID_LISTBOX, LB_ADDSTRING, 0, (LPARAM)"Hi there!");
+
+          // SendMessage(hwndText1,LB_ADDSTRING,0, (LPARAM)message);
+          // SendMessage(hwndText,WM_SETTEXT,NULL, (LPARAM)"");
+
+          // RedrawWindow(hwnd, NULL, NULL, RDW_INVALIDATE | RDW_ERASE);
+
+          break;
+
+      }
+      break;
 
 
     case WM_DESTROY:
