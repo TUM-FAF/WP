@@ -25,6 +25,7 @@
 ### General things
 
 * Please make an effort and count your points
+* Please next time count your points using provided table (there is a table in report template)
 * Take in account that your next deadline is on 8th of march (even if it is holiday)
 
 ## Gained points
