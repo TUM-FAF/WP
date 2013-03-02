@@ -29,3 +29,7 @@ Advanced Form Elements. Child Windowses. Basics of Working With Keyboard.
   * Section I, Chapter 9
   * Section I, Chapter 10
   * Section I, Chapter 11
+  * [Some child windowses examples](http://stackoverflow.com/a/4474663)
+  * [Button, Edit, List Box](http://www.winprog.org/tutorial/controls.html)
+  * [Window style codes](http://msdn.microsoft.com/en-us/library/windows/desktop/ms632600(v=vs.85\).aspx)
+  * [Edit Control styles](http://msdn.microsoft.com/en-us/library/windows/desktop/bb775464(v=vs.85\).aspx)
