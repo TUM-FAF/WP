@@ -11,6 +11,7 @@
 * Inside your report - add a link to your lab repository (I know where it is, but it will be easier for me to locate your repository)
 * Better use a report template provided in [repository](https://github.com/TUM-FAF/WP)
 * You said nothing about PSG (At least choose one existent that matches your style. If it has any differences - mention them.)
+* Spellcheck your report/documentation/code (even if I don't do it always)
 
 ### About repository
 
