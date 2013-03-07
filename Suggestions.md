@@ -18,7 +18,7 @@
 * Rename your folder names in your repository to follow **lab#0** pattern
 * For each laboratory work add one README file (in its own folder)
 * Keep your finished code in master branch. It is awesome that you get how to work with branches, but proposed work flow is a bit different: use master branch for submission ready code, and use other branches for development and testing. For details look at [submission process page](https://github.com/TUM-FAF/WP/wiki/Submission-Process)
-* It seems that you compiled your project before adding .gitignore. Please remove unnecesary files from repository (foldes _bin_ and _obj_) and next time check your staged files before making a commit.
+* It seems that you compiled your project before adding .gitignore. Please remove unnecessary files from repository (foldes _bin_ and _obj_) and next time check your staged files before making a commit.
 
 ### About code
 
