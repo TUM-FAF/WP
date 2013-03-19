@@ -12,6 +12,7 @@
 * Better use a report template provided in [repository](https://github.com/TUM-FAF/WP)
 * You said nothing about PSG (At least choose one existent that matches your style. If it has any differences - mention them.)
 * Spellcheck your report/documentation/code (even if I don't do it always)
+* Please change the number of laboratory work in readme and in report
 
 ### About repository
 
