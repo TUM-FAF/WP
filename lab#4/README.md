@@ -21,3 +21,4 @@ Windows Timer. Animation.
 * Programming Windows by Charlez Petzold, 5th edition:
   * Section I, Chapter 8
 * [Flicker free drawing](http://www.catch22.net/tuts/flicker-free-drawing)
+* [Double buffering in win32 api](http://www.cplusplus.com/forum/windows/35484/)
