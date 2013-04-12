@@ -8,3 +8,5 @@ Balls may interact:
 * On collisions they change color and moving direction
 * If collision of 2 balls is bigger/deeper than 4 pixels then one ball will randomly teleport
 * One ball leaves a movement temporary tail
+
+![example](https://github.com/TUM-FAF/WP/blob/solved/lab%234/images/screenshot1.png?raw=true)
