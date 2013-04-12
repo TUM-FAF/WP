@@ -12,6 +12,7 @@
 * Better use a report template provided in [repository](https://github.com/TUM-FAF/WP)
 * You said nothing about PSG (At least choose one existent that matches your style. If it has any differences - mention them.)
 * Spellcheck your report/documentation/code (even if I don't do it always)
+* Please change the number of laboratory work in readme and in report
 
 ### About repository
 
@@ -20,6 +21,7 @@
 * Keep your finished code in master branch. It is awesome that you get how to work with branches, but proposed work flow is a bit different: use master branch for submission ready code, and use other branches for development and testing. For details look at [submission process page](https://github.com/TUM-FAF/WP/wiki/Submission-Process)
 * It seems that you compiled your project before adding .gitignore. Please remove unnecessary files from repository (foldes _bin_ and _obj_) and next time check your staged files before making a commit.
 * Your readme file may be styled much better if you'll use appropriate [markdown](http://daringfireball.net/projects/markdown/) syntax. You always may refresh your mind about markdown syntax simply by pressing keyboard key _m_ on any github page. Also you can live preview markdown text on [socrates.io](http://socrates.io/) even without Internet connection.
+* It will be great if you'll add into your repository your project file, so it will be easier for me and anyone else (even you if you'll clone your work) to run your project. CodeBlocks's project file has .cbp extension.
 
 ### About code
 
@@ -29,7 +31,6 @@
 
 * Please make an effort and count your points
 * Please next time count your points using provided table (there is a table in report template)
-* Take in account that your next deadline is on 8th of march (even if it is holiday)
 
 ## Gained points
 
