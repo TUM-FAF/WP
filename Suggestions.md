@@ -14,7 +14,7 @@
 * Spellcheck your report/documentation/code (even if I don't do it always)
 * Please change the number of laboratory work in readme and in report
 
-### About repository
+### About repository/project
 
 * Rename your folder names in your repository to follow **lab#0** pattern
 * For each laboratory work add one README file (in its own folder)
@@ -22,10 +22,8 @@
 * It seems that you compiled your project before adding .gitignore. Please remove unnecessary files from repository (foldes _bin_ and _obj_) and next time check your staged files before making a commit.
 * Your readme file may be styled much better if you'll use appropriate [markdown](http://daringfireball.net/projects/markdown/) syntax. You always may refresh your mind about markdown syntax simply by pressing keyboard key _m_ on any github page. Also you can live preview markdown text on [socrates.io](http://socrates.io/) even without Internet connection.
 * It will be great if you'll add into your repository your project file, so it will be easier for me and anyone else (even you if you'll clone your work) to run your project. CodeBlocks's project file has .cbp extension.
-
-### About code
-
 * Your project code is padded using tabs and spaces (it is not consistent and looks strange from an editor with different tab spacing (mine has 1 tab = 2 spaces)). Try to setup your project/IDE in such an order that it will be consistent.
+* I wasn't able to run your project. Maybe it is because I don't have the right project file or environment. So please write in your readme on what kind of environment your applications is running, and what are additional steps that should be taken in order to run it (in there are any).
 
 ### General things
 
