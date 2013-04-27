@@ -32,6 +32,7 @@ WinRT API
 
 ## References
 * [Windows Store app development](http://msdn.microsoft.com/en-us/windows/apps/br229512.aspx)
+* [Make great Windows Store apps](http://msdn.microsoft.com/en-US/library/windows/apps/hh464920.aspx)
 * [Visual C++ and WinRT/Metro - Some fundamentals](http://www.codeproject.com/Articles/262151/Visual-Cplusplus-and-WinRT-Metro-Some-fundamentals)
 * [A .NET Developer's guide to WinRT](http://www.devweek.com/code/DWheeler_DevWeek12_DotNet_Dev_Guide_WinRT.pdf)
 * [WinRT app dev guide](http://www.irisclasson.com/2012/08/20/winrt-app-guide-step-1-the-idea/)
@@ -43,3 +44,4 @@ WinRT API
 * [Windows Dev Center](http://msdn.microsoft.com/en-us/windows/)
 * [Windows Dev Forum](http://social.msdn.microsoft.com/Forums/en-US/category/windowsapps)
 * [Windows Store app samples](http://code.msdn.microsoft.com/windowsapps)
+* 
