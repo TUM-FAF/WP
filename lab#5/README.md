@@ -17,7 +17,7 @@ Collaboration. Complex application.
 * Work on this project in a team of 2-4 **(2 pt)**
   * Divide tasks and describe them in readme (for each task indicate who is responsible for it) **(1 pt)**
 * Make it useful (you may ask me to evaluate usefulness of your application idea) **(0-3 pt)**
-* First create a sketch, then work on code **(1 ;g)** _(commit sketch/sketches early)_
+* First create a sketch, then work on code **(1 pt)** _(commit sketches early)_
 
 ## Some examples of application ideas
 * [Cangourou/Furnica](http://torrentsmd.com/details.php?id=238851) simplified clone:
