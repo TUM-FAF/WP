@@ -29,6 +29,10 @@ Collaboration. Complex application.
   * Display a map on which are displayed in real-time fling airplanes
   * Time travel (give ability to increase/decrease/revert time speed)
 * Sea battle fight (only offline mode as network communication is outside of scope for this course)
+* [Interactive Generative Art](http://weavesilk.com/)
+  * Display something interactive and generative
+  * Add some options to customize interactiveness or generated image
+  * Add some options like save or load image
 
 In provided examples it is easy to divide tasks for 2: one may work on animation and the second one can work on controls.
 
