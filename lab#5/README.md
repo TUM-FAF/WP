@@ -33,6 +33,8 @@ Collaboration. Complex application.
   * Display something interactive and generative
   * Add some options to customize interactiveness or generated image
   * Add some options like save or load image
+* [Code controlled game](http://morrisgames.info/)
+  * Player should be controlled by programmable commands
 
 In provided examples it is easy to divide tasks for 2: one may work on animation and the second one can work on controls.
 
