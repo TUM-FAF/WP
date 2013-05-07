@@ -17,7 +17,7 @@ Collaboration. Complex application.
 * Work on this project in a team of 2-4 **(2 pt)**
   * Divide tasks and describe them in readme (for each task indicate who is responsible for it) **(1 pt)**
 * Make it useful (you may ask me to evaluate usefulness of your application idea) **(0-3 pt)**
-* First create a sketch, then work on code **(1 ;g)** _(commit sketch/sketches early)_
+* First create a sketch, then work on code **(1 pt)** _(commit sketches early)_
 
 ## Some examples of application ideas
 * [Cangourou/Furnica](http://torrentsmd.com/details.php?id=238851) simplified clone:
@@ -29,6 +29,12 @@ Collaboration. Complex application.
   * Display a map on which are displayed in real-time fling airplanes
   * Time travel (give ability to increase/decrease/revert time speed)
 * Sea battle fight (only offline mode as network communication is outside of scope for this course)
+* [Interactive Generative Art](http://weavesilk.com/)
+  * Display something interactive and generative
+  * Add some options to customize interactiveness or generated image
+  * Add some options like save or load image
+* [Code controlled game](http://morrisgames.info/)
+  * Player should be controlled by programmable commands
 
 In provided examples it is easy to divide tasks for 2: one may work on animation and the second one can work on controls.
 

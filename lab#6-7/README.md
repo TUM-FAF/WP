@@ -4,7 +4,7 @@ _You can choose to do your laboratory works using Win32 API, or you can switch t
 
 _This laboratory work is a concatenation of lab#6 and lab#7. The deadline is as for lab#7. Mark will be cloned and assigned to both laboratory works' cells in my spreadsheet. You have to indicate in report that it is for both laboratory works._
 
-_Take care, for working with WinRT API you'll need a Win8 OS and Visual Studio 2012 which runs only on Win8 (actually I'm not sure about that)._
+_Take care, for working with WinRT API you'll need Visual Studio 2012 and .NET4.5_
 
 ## Title
 WinRT API
@@ -44,4 +44,3 @@ WinRT API
 * [Windows Dev Center](http://msdn.microsoft.com/en-us/windows/)
 * [Windows Dev Forum](http://social.msdn.microsoft.com/Forums/en-US/category/windowsapps)
 * [Windows Store app samples](http://code.msdn.microsoft.com/windowsapps)
-* 
