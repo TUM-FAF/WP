@@ -1,6 +1,6 @@
 # Windows Programming Laboratory Work #6-7
 
-_You can choose to do your laboratory works using Win32 API, or you can switch to WinRT API. For Win32 API take a look at **lab#6** and **lab#7**_
+_You can choose to do your laboratory works using Win32 API, or you can switch to WinRT API. For Win32 API take a look at [lab#6](https://github.com/TUM-FAF/WP/tree/master/lab%236) and [lab#7](https://github.com/TUM-FAF/WP/tree/master/lab%237)_
 
 _This laboratory work is a concatenation of lab#6 and lab#7. The deadline is as for lab#7. Mark will be cloned and assigned to both laboratory works' cells in my spreadsheet. You have to indicate in report that it is for both laboratory works._
 

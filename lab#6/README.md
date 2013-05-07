@@ -1,6 +1,6 @@
 # Windows Programming Laboratory Work #6
 
-_You can choose to do your laboratory works using Win32 API, or you can switch to WinRT API. For WinRT API take a look at **lab#6-7**_
+_You can choose to do your laboratory works using Win32 API, or you can switch to WinRT API. For WinRT API take a look at [lab#6-7](https://github.com/TUM-FAF/WP/tree/master/lab%236-7)_
 
 ## Title
 The clipboard
