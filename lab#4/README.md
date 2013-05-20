@@ -15,7 +15,7 @@ Windows Timer. Animation.
 * Add animated objects which interact with each other **(2-6 pt)**, ex.:
   * Few balls which have different velocity and moving angles. In order to get max points, add balls with mouse, make balls to change color on interaction and any other things that will show your engineering spirit
   * Any other interesting and reach in animation application
-* Animate a Nyan Cat that leaves a rainbow tail **(Math.floor(+30% for task with interacting objects))**
+* Animate a Nyan Cat that leaves a rainbow tail **(Math.floor(+35% for task with interacting objects))**
 
 ## References
 * Programming Windows by Charlez Petzold, 5th edition:
