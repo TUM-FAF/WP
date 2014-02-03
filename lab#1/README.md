@@ -16,7 +16,7 @@ Window. Window handling. Basic window’s form elements
 
 ### IDE and compiler
 You can use whatever IDE/Text editor/CLI you want, but you'll have to write code by your own.
-I recommend [CodeBlocks](http://www.codeblocks.org/) as it is cross platform, has a version which contains a compiler, and is less tempting to try drag-n-drop features.
+I recommend [CodeBlocks](http://www.codeblocks.org/) as it is cross platform, it has a version which contains a compiler and it is less tempting to try drag-n-drop features.
 
 #### If you chose CodeBlocks, here is how you start a project with it:
 * Download. Better choose a version which has compiler. Also it is a good idea to take last stable version (12.11), but it is not mandatory as 8.X is also good one.
