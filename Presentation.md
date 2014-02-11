@@ -31,4 +31,4 @@ CodeBlocks is a recommended IDE, hence many choose VisualStudio. Either way you'
 Recommended documentation is _Windows Programming, 5th Edition by Charlez Petzold_ (don't confuse it with 6th edition). Many good things may be found on [MSDN](http://msdn.microsoft.com/en-US/) such as Win32 API structures, functions default parameters and returns.
 
 ## Solution Examples
-_Windows Programming_ has many examples. Only those examples should be enough to complete laboratory works. Hence many other good things are on [MSDN](http://msdn.microsoft.com/en-US/), [CodeProject](http://www.codeproject.com/) and probably other websites. Also many laboratory works from previous years are available in [our organization repositoryy](https://github.com/TUM-FAF).
+_Windows Programming_ has many examples. Only those examples should be enough to complete laboratory works. Hence many other good things are on [MSDN](http://msdn.microsoft.com/en-US/), [CodeProject](http://www.codeproject.com/) and probably other websites. Also many laboratory works from previous years are available in [our organization repository](https://github.com/TUM-FAF).
