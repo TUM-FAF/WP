@@ -39,7 +39,7 @@ Initially master branch should have two files: .gitignore and README.md.
 * I recommend to copy .gitignore file from [WP Labs master branch](https://github.com/TUM-FAF/WP). Add additional rules in order not to submit unnecessary files to repository.
 * README.md (can be any other flavoured by GitHub extension) should contain at least the name of course and your name.
 
-Later you'll have one folder per laboratory work. Use **lab#X** format (where X is laboratory work number). More about this you can find on [Submission Process page](https://github.com/TUM-FAF/WP/wiki/Submission-Process).
+Later you'll have one folder per laboratory work. Use **Lab#X** format (where X is laboratory work number). More about this you can find on [Submission Process page](https://github.com/TUM-FAF/WP/wiki/Submission-Process).
 
 Before submission you can use other branches to work on your projects. You can use other branches in order to require help from me or other classmates.
 
