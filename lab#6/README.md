@@ -1,24 +1,28 @@
 # Windows Programming Laboratory Work #6
 
-_You can choose to do your laboratory works using Win32 API, or you can switch to WinRT API. For WinRT API take a look at [lab#6-7](https://github.com/TUM-FAF/WP/tree/master/lab%236-7)_
+_This laboratory work should be done using C#_
 
 ## Title
-The clipboard
+Developing using C#. WinRT
 
 ## Contents
-* The clipboard
+* C#
+* WinRT
 
 ## Mandatory Objectives
-* Create an Win32 application.
-* When pasting (Ctrl+V) a text value, output it in your application using _DrawText_ function
-* When the clipboard has no content then output an alert (Message Box) with explanation.
-* When the clipboard contains non-text content (link, dif, bitmap...) output an alert (Message Box) with explanation.
+* Create an Win32 or WinRT application using C#
+* Choose one of:
+  * Convert a previous laboratory work to C#
+  * Create a ToDo list. Should contain:
+    * A list of tasks
+    * A way to add new tasks from UI
 
 ## Objectives With Points
-* When clipboard contains some specific text (circle, rectangle) then draw/do (on paste) something different from drawing **(1 pt)**
-* When clipboard contains some data in bitmap format or a link to a bitmap, draw that bitmap (on paste) in your application **(3 pt)**
-* When clipboard contains a reference to a text file, then output (on paste) first X characters of this file **(2 pt)**
+* Create a report (3pt) _yes, this is a +3pt from office_
+* Use WinRT (3pt)
+* Create a pull request with a meaningful fix/feature to 5th WP laboratory work of your colleagues. It should be a project in which you were not involved. (4pt)
+* Claim point for your own tasks (up to 7pt)
 
 ## References
-* Programming Windows by Charlez Petzold, 5th edition:
-  * Section I, Chapter 12
+* A set of 4 articles for creating a ToDo list in WPF: [part1](http://www.aspfree.com/c/a/windows-scripting/wpf-through-an-example-introduction/), [part2](http://www.aspfree.com/c/a/windows-scripting/adding-controls-to-an-application-with-wpf/), [part3](http://www.aspfree.com/c/a/windows-scripting/data-converstion-and-task-addition-with-wpf/), [part4](http://www.aspfree.com/c/a/windows-scripting/completing-a-wpf-to-do-list-application/)
+* [A ToDo app example](https://github.com/Mellen/To-Do-List)
