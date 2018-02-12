@@ -58,7 +58,7 @@ For example:
 Whatever you choose, add a link to it in your master's branch readme file.
 If you are going to write your own PSG, do not forget to add it into your master branch.
 
-## Mandatory Objectives `(5pt)`
+## Mandatory Objectives
 
 * Choose a _Programming Style Guideline_ that you'll follow
 * Create a `Windows application`
