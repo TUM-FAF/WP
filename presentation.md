@@ -2,7 +2,7 @@
 
 ## Title of Laboratory Works
 
-Windows Programming
+Event-Driven Programming
 
 ## Communication Language
 
